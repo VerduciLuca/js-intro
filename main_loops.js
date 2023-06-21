@@ -176,25 +176,44 @@ console.log('loooooooops')
 
 // VERSIONE SIZE
 
-const size = prompt('inserisci la dimensioni della scacchiera');
+// const size = 6;
+// let scacchiera = '';
+
+// for (let i = 0; i < size; i++) {
+//     for (let j = 0; j < size; j++) {
+//         if (i%2=== 0 && j%2===0) {
+//             scacchiera += '#'
+            
+//          }
+//         if (i%2===1 && j%2===1) {
+//             scacchiera += '#'
+//         }
+//          else {
+//             scacchiera += '0'
+
+//          }     
+//     }    
+// }
+// console.log(scacchiera)
+
+const size = 8;
 let scacchiera = '';
 
 for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
-        if (i%2===0) {
-            if (j%2===0) {
-                scacchiera+= ' '
-            } 
-            
-        } else {
-
-            
+        if (i % 2 === 0 && j % 2 === 0) {
+            scacchiera += '#';
         }
-
-
-        
+        else
+         if (i % 2 === 1 && j % 2 === 1) {
+            
+            scacchiera += '#';
+        }
+        else {
+            scacchiera += ' ';
+        }
     }
-   
-    
+    scacchiera += '\n'; 
 }
-console.log(scacchiera)
+
+console.log(scacchiera);
