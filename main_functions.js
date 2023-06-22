@@ -158,7 +158,12 @@
 // NE DELLA LIBERIA MATH
 
 function pow (base, exponent){
-    
+    let j;
+    for (let i = 0; i < exponent; i++) {
+       j*= base;   
+    }
+  
+    return j;
 
 }
 
