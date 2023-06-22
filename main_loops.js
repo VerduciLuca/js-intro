@@ -196,24 +196,26 @@ console.log('loooooooops')
 // }
 // console.log(scacchiera)
 
-const size = 8;
+const size = prompt('Inserire le dimensioni desiderate per la tabella');
 let scacchiera = '';
 
 for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
         if (i % 2 === 0 && j % 2 === 0) {
-            scacchiera += '#';
+            scacchiera += '●';
         }
         else
          if (i % 2 === 1 && j % 2 === 1) {
             
-            scacchiera += '#';
+            scacchiera += '●';
         }
         else {
-            scacchiera += ' ';
+            scacchiera += '○';
         }
     }
     scacchiera += '\n'; 
 }
 
-console.log(scacchiera);
+console.log(scacchiera); 
+
+//    (─‿‿─)    //
