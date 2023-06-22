@@ -156,61 +156,145 @@
 // // ESERCIZIO 1
 // DEFINIRE UNA FUNZIONE 'pow' CHE NON FACCIA USO DELL' OPERATORE '**' 
 // NE DELLA LIBERIA MATH
+console.log('1)')
 
-function pow (base, exponent){
-    let j;
-    for (let i = 0; i < exponent; i++) {
-       j*= base;   
+function pow(base, exponent) {
+    let result = base
+
+    for (let i = 1; i < exponent; i++) {
+
+        result = result * base
     }
-  
-    return j;
-
+    return result
 }
+const result = pow(5, 3)
+console.log(result)
+
+
 
 // // ESERCIZIO 2
 // DEFINIRE UNA FUNZIONE 'correctCase' CHE PRENDA IN INPUT UNA STRINGA
 // E LA RESTITUISCE TRASFORMANDO LA PRIMA LETTERA IN MAIUSCOLO
+console.log('2)')
 
-function correctCase{
+function correctCase(string) {
+    if (string === undefined) {
+        nuovaFrase = 'Non hai inserito nessuna frase'
 
+    } else {
+        const char = string[0];
+        const nuovaFrase = char.toUpperCase() + string.slice(1); //slice ha due parametri volendo
+        return nuovaFrase;
+    }
 }
 
-// // ESERCIZIO 3
-// DEFINIRE UNA FUNZIONE 'min' CHE DATI DUE NUMERI
-// RESTITUISCA IL MINORE
+const risultato = correctCase('lorem ipsum')
+console.log(risultato)
 
-function min{
+// // // ESERCIZIO 3
+// // DEFINIRE UNA FUNZIONE 'min' CHE DATI DUE NUMERI
+// // RESTITUISCA IL MINORE
+console.log('3)')
 
+function min(num1, num2) {
+    if (num1 > num2) {
+        const numMin = num2
+        return numMin
+    }
+    else {
+        const numMin = num1
+        return numMin
+    }
+}
+const risultato3 = min(193597, 19)
+console.log(risultato3)
+
+// // // ESERCIZIO 4
+// // DEFINIRE UNA FUNZIONE 'clamp' CHE PRENDE COME PARAMETRI
+// // TRE NUMERI: VALORE, MASSIMO, MINIMO.
+// // SE VALORE È MINORE DI MINIMO, RESTITUISCE MINIMO
+// // SE MAGGIORE DI MASSIMO, RESTITUISCE MASSIMO
+// // ALTRIMENTI RESITUISCE VALORE
+console.log('4)')
+
+function clamp(n,max,min){
+    if (n<min) {
+        clampResult= min
+        return clampResult
+    }
+    if (n>max) {
+        clampResult= max
+        return clampResult
+        
+    } else {
+        clampResult = n
+        return clampResult
+    }
+}
+const risultato4=clamp(37, 40, 30)
+console.log(risultato4)
+
+// // // ESERCIZIO 5
+// // DEFINIRE UNA FUNZIONE 'chessboard' CHE PRENDE COME PARAMETRO
+// // 'size' E STAMPA LA SCACCHIERA
+console.log('5)')
+
+function chessboard(size){
+    let scacchiera = '';
+
+for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+        if (i % 2 === 0 && j % 2 === 0) {
+            scacchiera += '●';
+        }
+        else
+         if (i % 2 === 1 && j % 2 === 1) {
+            
+            scacchiera += '●';
+        }
+        else {
+            scacchiera += '○';
+        }
+    }
+    scacchiera += '\n'; 
+}
+ return scacchiera
 }
 
-// // ESERCIZIO 4 
-// DEFINIRE UNA FUNZIONE 'clamp' CHE PRENDE COME PARAMETRI 
-// TRE NUMERI: VALORE, MASSIMO, MINIMO.
-// SE VALORE È MINORE DI MINIMO, RESTITUISCE MINIMO
-// SE MAGGIORE DI MASSIMO, RESTITUISCE MASSIMO
-// ALTRIMENTI RESITUISCE VALORE
+const risultato5=chessboard(4)
+console.log(risultato5);
+// // // ESERCIZIO 6
+// // DEFINIRE UNA FUNZIONE 'ellipse' CHE PRENDE COME PARAMETRO
+// // UNA STRINGA, SE LA STRINGA È MINORE DI 20 CARATTERI LA RITORNA NON MODIFICATA
+// // ALTRIMENTI LA TAGLIA A 20 CARATTERI E AGGIUNGE 3 PUNTINI
+console.log('6)')
 
-function clamp{
-
+function ellipse(string) {
+    if (string.length<20) {
+        stringNuova=string
+        return stringNuova
+        }
+        else
+        {
+           stringNuova= string.slice(0,20)+'...'
+           return stringNuova
+        }
+        
 }
+const risultato6=ellipse('ODDIOADISJAOHDOUHEBNFHIENIij')
+console.log(risultato6)
 
-// // ESERCIZIO 5
-// DEFINIRE UNA FUNZIONE 'chessboard' CHE PRENDE COME PARAMETRO
-// 'size' E STAMPA LA SCACCHIERA
-
-function chessboard{
-
-}
-
-// // ESERCIZIO 6
-// DEFINIRE UNA FUNZIONE 'ellipse' CHE PRENDE COME PARAMETRO
-// UNA STRINGA, SE LA STRINGA È MINORE DI 20 CARATTERI LA RITORNA NON MODIFICATA
-// ALTRIMENTI LA TAGLIA A 20 CARATTERI E AGGIUNGE 3 PUNTINI
-
-function ellipse {
-
-}
 
 // // ESERCIZIO 7
 // DEFINIRE UNA FUNZIONE 'reverseString' CHE PRENDE COME PARAMETRO
 // UNA STRINGA E LA RESTITUSCE AL CONTRARIO
+console.log('7)')
+function reverseString(string) {
+    let stringRev=''
+    for (let i = string.length -1; i >=0; i--) {   //length -1 indica l'ultimo
+        stringRev= stringRev + string[i]   
+    }
+    return stringRev
+}
+const risultato7=reverseString('Sono una frase al contrario')
+console.log(risultato7)
