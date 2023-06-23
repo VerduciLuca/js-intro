@@ -2,7 +2,7 @@ console.log("array");
 
 // // ARRAY -------------------------------------------------------------------------------------------------
 
-// // const pippo = ['pane', 'latte', 'pasta', 'hashish'];
+// // const pippo = ['pane', 'latte', 'pasta', 'broccoli'];
 
 // // console.log(pippo)
 
@@ -55,19 +55,19 @@ console.log("array");
 // // TRASFORMAZIONI DI ARRAY ------------------------------------------------------------------
 
 // // // MAPPING------------------------------------
-// // const paperino = [2, 5, -4, 2000, 7, 34];
+// const paperino = [2, 5, -4, 2000, 7, 34];
 
-// function arrayDouble(selectedArray) {
-//   const newArray = [];
+function arrayDouble(selectedArray) {
+    const newArray = [];
 
-//   for (let i = 0; i < selectedArray.length; i++) {
-//     const element = selectedArray[i];
-//     const newElement = element * 2;
-//     newArray.push(newElement);
-//   }
-//   return newArray;
-// }
-// // console.log("double:", arrayDouble(paperino));
+    for (let i = 0; i < selectedArray.length; i++) {
+        const element = selectedArray[i];
+        const newElement = element * 2;
+        newArray.push(newElement);
+    }
+    return newArray;
+}
+// console.log("double:", arrayDouble(paperino));
 
 // // function splitIfEven(secondArray) {
 // //   let newArray = [];
@@ -152,51 +152,206 @@ console.log("array");
 // ESERCIZI------------------------------------------------------------
 
 const numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34];
-const stringArray = ['23','PIPPO','pluto','la CASA blu','Osvaldo','','porchetta']
+const stringArray = ['23', 'PIPPO', 'pluto', 'la CASA blu', 'Osvaldo', '', 'porchetta']
 
 // 1) MAPPING FUNCTION CHE PRENDE IN INPUT UN ARRAY DI NUMERI
 //    E RESTITUISCE UN ARRAY CON TUTTI I NUMERI DIMINUITI DI 1
 
+function minusOne(nArray) {
+    const minusOneArray = []
+    for (let i = 0; i < nArray.length; i++) {
+        const element = nArray[i];
+        nMinus1 = element - 1
+        minusOneArray.push(nMinus1)
+    }
+    return minusOneArray
+
+}
+
+console.log('1)', minusOne(numbersArray))
 
 
 // 2) MAPPING FUNCTION CHE PRENDE IN INPUT UN ARRAY DI NUMERI
-//    E RESTITUISCE UN ARRAY CON IL VALORE ASSOLUTO DEI VALORI  
+//    E RESTITUISCE UN ARRAY CON IL VALORE ASSOLUTO DEI VALORI
 
+function absolute(nArray) {
+    const absoluteArray = []
+    for (let i = 0; i < nArray.length; i++) {
+        const element = nArray[i];
+        if (element < 0) {
+            absoluteArray.push(element*-1)
+        }
+        else {
+            absoluteArray.push(element)
+        }
 
+    }
+    return absoluteArray
+
+}
+
+console.log('2)', absolute(numbersArray))
 
 // 3) MAPPING FUNCTION CHE PRENDE IN INPUT UN ARRAY DI NUMERI
 //    E RESTITUISCE UN ARRAY DI STRINGHE CON SCRITTO PARI SE PARI
 //    E DISPARI SE DISPARI
 
+function evenOdd(nArray) {
+    const evenOddArray = []
+    for (let i = 0; i < nArray.length; i++) {
+        
+        const element = nArray[i];
+
+        let newElement= element%2===0 ? 'pari': 'dispari'
+        
+        evenOddArray.push(newElement)
+    }
+    return evenOddArray
+
+}
+
+console.log('3)', evenOdd(numbersArray))
 
 
 // 4) MAPPING FUNCTION CHE PRENDE IN INPUT UN ARRAY DI STRINGHE
 //    E LE RESTITUISCE TUTTE MINUSCOLE
+
+function lowerCaseConverter(stringArray) {
+    const lowerCaseArray = []
+    for (let i = 0; i < stringArray.length; i++) {
+        
+    const element = stringArray[i];
+        let newString= element.toLowerCase()
+        lowerCaseArray.push(newString)
+    
+    }
+    return lowerCaseArray
+
+}
+
+console.log('3)', lowerCaseConverter(stringArray))
 
 
 
 // 5) MAPPING FUNCTION CHE PRENDE IN INPUT UN ARRAY DI STRINGHE
 //    E RESTITUISCE UN ARRAY DI NUMERI CON LA LUNGHEZZA DELLE STRINGHE
 
+function lengthCalculator(stringArray) {
+    const stringLengthArray = []
+    for (let i = 0; i < stringArray.length; i++) {
+        
+    const element = stringArray[i];
+        let stringLength= element.length
+        stringLengthArray.push(stringLength)
+    
+    }
+    return stringLengthArray
+
+}
+
+console.log('3)', lengthCalculator(stringArray))
 
 
 // 6) MAPPING FUNCTION CHE PRENDE IN INPUT UN ARRAY DI STRINGHE
 //    E LE RESTITSCE IN FORMATO camelCase
 
+function camelCaser(stringArray) {
+    const camelCaseArray = []
+    for (let i = 0; i < stringArray.length; i++) {
+        let wordsArray = []
+
+        const element = stringArray[i];
+
+        wordsArray=element.split(' ')
+
+        wordsArray[0] = wordsArray[0].toLowerCase()
+        let camelCased = wordsArray[0]
+
+        for (let i = 1; i < wordsArray.length; i++) {
+
+            let newElement = wordsArray[i];
+            newElement= newElement[0].toUpperCase() + newElement.slice(1).toLowerCase()
+            camelCased += newElement
+
+        }
+      
+        camelCaseArray.push(camelCased)
+    
+    }
+    return camelCaseArray
+
+}
+
+console.log('3)', camelCaser(stringArray))
 
 
-// 7) FILTER FUNCTION CHE PRENDE IN INPUT UN ARRAY DI STRINGHE 
+
+
+
+// 7) FILTER FUNCTION CHE PRENDE IN INPUT UN ARRAY DI STRINGHE
 //    E RESTITUISCE SOLO QUELLE CON PIU DI 3 CARATTERI
 
+function removeShorterThen(selectedArray, longLength) {
+  let newArray = [];
+
+  for (let i = 0; i < selectedArray.length; i++) {
+    const element = selectedArray[i];
+    
+    let newElement= element.length<longLength ? '': element
+
+    if (newElement===element) {
+        newArray.push(element);
+        
+    }
+
+}
+
+  return newArray;
+}
+console.log("7)", removeShorterThen(stringArray, 3));
 
 
-// 8) FILTER FUNCTION CHE PRENDE IN INPUT UN ARRAY DI STRINGHE 
+// 8) FILTER FUNCTION CHE PRENDE IN INPUT UN ARRAY DI STRINGHE
 //    E RESTITUISCE SOLO QUELLE CHE CONTENGONO LA LETTERA P
+
+function letterFinder(selectedArray, letter) {
+    let newArray = [];
+  
+    for (let i = 0; i < selectedArray.length; i++) {
+      const element = selectedArray[i];
+      
+      let newElement= element.includes(letter) ? element : 'x'
+  
+      if (newElement===element) {
+          newArray.push(element);
+          
+      }
+  
+  }
+  
+    return newArray;
+  }
+  console.log("8)", letterFinder(stringArray, 'p'));
 
 
 
 // 9) FILTER FUNCTION CHE PRENDE IN INPUT UN ARRAY DI NUMERI
 //    E RESTITUISCE I POSITIVI DIVISIBILI PER 3
+
+function divisibleBy(selectedArray, dividend){
+    let newArray = []
+
+for (let i = 0; i < selectedArray.length; i++) {
+    const element = selectedArray[i];
+
+    if (element>0 && element%dividend===0) {
+        newArray.push(element)
+        }
+    
+    }
+    return newArray
+}
+console.log('9)',divisibleBy(numbersArray,3))
 
 
 
