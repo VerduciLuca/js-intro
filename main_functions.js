@@ -1,6 +1,5 @@
 // console.log('functions!')
 
-
 // function square(specialNumber) {
 //     const result = specialNumber * specialNumber;
 //     return result;
@@ -17,7 +16,7 @@
 
 // function logMultipleTimes(stringToLog, times){
 //     for (let i = 0; i < times; i++) {
-//         console.log(stringToLog)      
+//         console.log(stringToLog)
 //     }
 // }
 
@@ -53,14 +52,13 @@
 // const pluto = isEven(27)
 //  console.log(pluto);
 
-// const paperino = pow(5,3) 
+// const paperino = pow(5,3)
 // console.log(paperino)
 
 // const gastone = lastCharUppercase('genova')
 // console.log(gastone)
 
 //  // Non per forza serve un return, a meno che non voglia "ritornare" un risultato.
-
 
 // SINTASSI ALTERNATIVE
 
@@ -113,7 +111,7 @@
 
 // function pow(base,exponent){
 // if (base===undefined) {
-//     return 'che cavolo stai facendo?!'   
+//     return 'che cavolo stai facendo?!'
 // }
 
 //     if (exponent !== undefined) {
@@ -154,60 +152,59 @@
 // console.log(startingNumber, typeof startingNumber);
 
 // // ESERCIZIO 1
-// DEFINIRE UNA FUNZIONE 'pow' CHE NON FACCIA USO DELL' OPERATORE '**' 
+// DEFINIRE UNA FUNZIONE 'pow' CHE NON FACCIA USO DELL' OPERATORE '**'
 // NE DELLA LIBERIA MATH
-console.log('1)')
+console.log("1)");
 
 function pow(base, exponent) {
-    let result = base
+  let result = 1;
 
-    for (let i = 1; i < exponent; i++) {
-
-        result = result * base
-    }
-    return result
+  for (let i = 0; i < exponent; i++) {
+    result = result * base;
+  }
+  return result;
 }
-const result = pow(5, 3)
-console.log(result)
-
-
+const result = pow(5, 3);
+console.log(result);
 
 // // ESERCIZIO 2
 // DEFINIRE UNA FUNZIONE 'correctCase' CHE PRENDA IN INPUT UNA STRINGA
 // E LA RESTITUISCE TRASFORMANDO LA PRIMA LETTERA IN MAIUSCOLO
-console.log('2)')
+console.log("2)");
 
 function correctCase(string) {
-    if (string === undefined) {
-        nuovaFrase = 'Non hai inserito nessuna frase'
-
-    } else {
-        const char = string[0];
-        const nuovaFrase = char.toUpperCase() + string.slice(1); //slice ha due parametri volendo
-        return nuovaFrase;
-    }
+  if (string === undefined) {
+    nuovaFrase = "Non hai inserito nessuna frase";
+  } else {
+    const char = string[0];
+    const nuovaFrase = char.toUpperCase() + string.slice(1); //slice ha due parametri volendo
+    return nuovaFrase;
+  }
 }
 
-const risultato = correctCase('lorem ipsum')
-console.log(risultato)
+const risultato = correctCase("lorem ipsum");
+console.log(risultato);
 
 // // // ESERCIZIO 3
 // // DEFINIRE UNA FUNZIONE 'min' CHE DATI DUE NUMERI
 // // RESTITUISCA IL MINORE
-console.log('3)')
+console.log("3)");
 
 function min(num1, num2) {
-    if (num1 > num2) {
-        const numMin = num2
-        return numMin
-    }
-    else {
-        const numMin = num1
-        return numMin
-    }
+  if (num1 > num2) {
+    const numMin = num2;
+    return numMin;
+  } else {
+    const numMin = num1;
+    return numMin;
+  }
 }
-const risultato3 = min(193597, 19)
-console.log(risultato3)
+
+// OPERATORE TERNARIO
+// return num1>num2 ? num2:num1
+
+const risultato3 = min(193597, 19);
+console.log(risultato3);
 
 // // // ESERCIZIO 4
 // // DEFINIRE UNA FUNZIONE 'clamp' CHE PRENDE COME PARAMETRI
@@ -215,86 +212,79 @@ console.log(risultato3)
 // // SE VALORE È MINORE DI MINIMO, RESTITUISCE MINIMO
 // // SE MAGGIORE DI MASSIMO, RESTITUISCE MASSIMO
 // // ALTRIMENTI RESITUISCE VALORE
-console.log('4)')
+console.log("4)");
 
-function clamp(n,max,min){
-    if (n<min) {
-        clampResult= min
-        return clampResult
-    }
-    if (n>max) {
-        clampResult= max
-        return clampResult
-        
-    } else {
-        clampResult = n
-        return clampResult
-    }
+function clamp(n, max, min) {
+  if (n < min) {
+    clampResult = min;
+    return clampResult;
+  }
+  if (n > max) {
+    clampResult = max;
+    return clampResult;
+  } else {
+    clampResult = n;
+    return clampResult;
+  }
 }
-const risultato4=clamp(37, 40, 30)
-console.log(risultato4)
+const risultato4 = clamp(37, 40, 30);
+console.log(risultato4);
 
 // // // ESERCIZIO 5
 // // DEFINIRE UNA FUNZIONE 'chessboard' CHE PRENDE COME PARAMETRO
 // // 'size' E STAMPA LA SCACCHIERA
-console.log('5)')
+console.log("5)");
 
-function chessboard(size){
-    let scacchiera = '';
+function chessboard(size) {
+  let scacchiera = "";
 
-for (let i = 0; i < size; i++) {
+  for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
-        if (i % 2 === 0 && j % 2 === 0) {
-            scacchiera += '●';
-        }
-        else
-         if (i % 2 === 1 && j % 2 === 1) {
-            
-            scacchiera += '●';
-        }
-        else {
-            scacchiera += '○';
-        }
+      if (i % 2 === 0 && j % 2 === 0) {
+        scacchiera += "●";
+      } else if (i % 2 === 1 && j % 2 === 1) {
+        scacchiera += "●";
+      } else {
+        scacchiera += "○";
+      }
     }
-    scacchiera += '\n'; 
-}
- return scacchiera
+    scacchiera += "\n";
+  }
+  return scacchiera;
 }
 
-const risultato5=chessboard(4)
+const risultato5 = chessboard(4);
 console.log(risultato5);
+
 // // // ESERCIZIO 6
 // // DEFINIRE UNA FUNZIONE 'ellipse' CHE PRENDE COME PARAMETRO
 // // UNA STRINGA, SE LA STRINGA È MINORE DI 20 CARATTERI LA RITORNA NON MODIFICATA
 // // ALTRIMENTI LA TAGLIA A 20 CARATTERI E AGGIUNGE 3 PUNTINI
-console.log('6)')
+console.log("6)");
 
 function ellipse(string) {
-    if (string.length<20) {
-        stringNuova=string
-        return stringNuova
-        }
-        else
-        {
-           stringNuova= string.slice(0,20)+'...'
-           return stringNuova
-        }
-        
+  if (string.length < 20) {
+    stringNuova = string;
+    return stringNuova;
+  } else {
+    stringNuova = string.slice(0, 20) + "...";
+    return stringNuova;
+  }
 }
-const risultato6=ellipse('ODDIOADISJAOHDOUHEBNFHIENIij')
-console.log(risultato6)
-
+const risultato6 = ellipse("ODDIOADISJAOHDOUHEBNFHIENIij");
+console.log(risultato6);
 
 // // ESERCIZIO 7
 // DEFINIRE UNA FUNZIONE 'reverseString' CHE PRENDE COME PARAMETRO
 // UNA STRINGA E LA RESTITUSCE AL CONTRARIO
-console.log('7)')
+console.log("7)");
 function reverseString(string) {
-    let stringRev=''
-    for (let i = string.length -1; i >=0; i--) {   //length -1 indica l'ultimo
-        stringRev= stringRev + string[i]   
-    }
-    return stringRev
+  let stringRev = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    //length -1 indica l'ultimo
+    stringRev = stringRev + string[i];
+  }
+  return stringRev;
 }
-const risultato7=reverseString('Sono una frase al contrario')
-console.log(risultato7)
+const risultato7 = reverseString("Sono una frase al contrario");
+console.log(risultato7);
