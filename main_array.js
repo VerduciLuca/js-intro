@@ -158,10 +158,11 @@ const stringArray = ['23', 'PIPPO', 'pluto', 'la CASA blu', 'Osvaldo', '', 'porc
 //    E RESTITUISCE UN ARRAY CON TUTTI I NUMERI DIMINUITI DI 1
 
 function minusOne(nArray) {
+
     const minusOneArray = []
     for (let i = 0; i < nArray.length; i++) {
         const element = nArray[i];
-        nMinus1 = element - 1
+        const nMinus1 = element - 1
         minusOneArray.push(nMinus1)
     }
     return minusOneArray
@@ -175,6 +176,7 @@ console.log('1)', minusOne(numbersArray))
 //    E RESTITUISCE UN ARRAY CON IL VALORE ASSOLUTO DEI VALORI
 
 function absolute(nArray) {
+
     const absoluteArray = []
     for (let i = 0; i < nArray.length; i++) {
         const element = nArray[i];
@@ -197,6 +199,7 @@ console.log('2)', absolute(numbersArray))
 //    E DISPARI SE DISPARI
 
 function evenOdd(nArray) {
+
     const evenOddArray = []
     for (let i = 0; i < nArray.length; i++) {
         
@@ -217,6 +220,7 @@ console.log('3)', evenOdd(numbersArray))
 //    E LE RESTITUISCE TUTTE MINUSCOLE
 
 function lowerCaseConverter(stringArray) {
+
     const lowerCaseArray = []
     for (let i = 0; i < stringArray.length; i++) {
         
@@ -237,6 +241,7 @@ console.log('3)', lowerCaseConverter(stringArray))
 //    E RESTITUISCE UN ARRAY DI NUMERI CON LA LUNGHEZZA DELLE STRINGHE
 
 function lengthCalculator(stringArray) {
+
     const stringLengthArray = []
     for (let i = 0; i < stringArray.length; i++) {
         
@@ -256,6 +261,7 @@ console.log('3)', lengthCalculator(stringArray))
 //    E LE RESTITSCE IN FORMATO camelCase
 
 function camelCaser(stringArray) {
+
     const camelCaseArray = []
     for (let i = 0; i < stringArray.length; i++) {
         let wordsArray = []
@@ -291,13 +297,14 @@ console.log('3)', camelCaser(stringArray))
 // 7) FILTER FUNCTION CHE PRENDE IN INPUT UN ARRAY DI STRINGHE
 //    E RESTITUISCE SOLO QUELLE CON PIU DI 3 CARATTERI
 
-function removeShorterThen(selectedArray, longLength) {
+function removeShorterThan(selectedArray, longLength) {
+
   let newArray = [];
 
   for (let i = 0; i < selectedArray.length; i++) {
     const element = selectedArray[i];
     
-    let newElement= element.length<longLength ? '': element
+    let newElement= element.length<longLength ? 'x': element
 
     if (newElement===element) {
         newArray.push(element);
@@ -308,7 +315,7 @@ function removeShorterThen(selectedArray, longLength) {
 
   return newArray;
 }
-console.log("7)", removeShorterThen(stringArray, 3));
+console.log("7)", removeShorterThan(stringArray, 3));
 
 
 // 8) FILTER FUNCTION CHE PRENDE IN INPUT UN ARRAY DI STRINGHE
@@ -320,7 +327,7 @@ function letterFinder(selectedArray, letter) {
     for (let i = 0; i < selectedArray.length; i++) {
       const element = selectedArray[i];
       
-      let newElement= element.includes(letter) ? element : 'x'
+      let newElement= element.toLowerCase().includes(letter) ? element : 'x'
   
       if (newElement===element) {
           newArray.push(element);
